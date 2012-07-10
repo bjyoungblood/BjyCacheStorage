@@ -40,7 +40,8 @@ class Module
         return array(
             'factories' => array(
                 'predis' => function($sm) {
-                    $predis = new Client();
+                    $config = $sm->get('Configuration');
+                    $predis = new Client($config['bjycachestorage']['redis']);
                     return $predis;
                 },
             ),
