@@ -1,5 +1,5 @@
 <?php
 return array(
-    'bjyredis' => array(
+    'bjycachestorage' => array(
     ),
 );

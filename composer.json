@@ -1,5 +1,5 @@
 {
-    "name": "bjyoungblood/BjyRedisCacheStorage",
+    "name": "bjyoungblood/BjyCacheStorage",
     "description": "Redis storage adapter for Zend\\Cache",
     "type": "library",
     "keywords": [
@@ -7,7 +7,7 @@
         "cache",
         "redis"
     ],
-    "homepage": "https://github.com/bjyoungblood/BjyRedisCacheStorage",
+    "homepage": "https://github.com/bjyoungblood/BjyCacheStorage",
     "authors": [
         {
             "name": "Ben Youngblood",
@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-0": {
-            "BjyRedisCacheStorage": "src/"
+            "BjyCacheStorage": "src/"
         }
     }
 }
