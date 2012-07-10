@@ -26,6 +26,11 @@ class Redis extends AbstractAdapter implements FlushableInterface
     protected function internalSetItem(& $normalizedKey, & $value)
     {
         $this->predis->set($normalizedKey, serialize($value));
+
+        if ($this->getOptions()->getTtl()) {
+            $this->predis->expire($normalizedKey, $this->getOptions()->getTtl());
+        }
+
         return false;
     }
 
