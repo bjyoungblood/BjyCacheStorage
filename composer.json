@@ -1,6 +1,6 @@
 {
-    "name": "bjyoungblood/BjyCacheStorage",
-    "description": "Redis storage adapter for Zend\\Cache",
+    "name": "bjyoungblood/bjy-cache-storage",
+    "description": "Various storage adapters for Zend\\Cache",
     "type": "library",
     "keywords": [
         "zf2",
