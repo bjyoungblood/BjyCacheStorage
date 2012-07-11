@@ -22,6 +22,8 @@ class Module
             $adapter->setPredis($mainSm->get('predis'));
             return $adapter;
         }, false);
+
+        $adapterPluginManager->setInvokableClass('zenddb', 'BjyCacheStorage\Adapter\ZendDb', false);
     }
 
     public function getAutoloaderConfig()
