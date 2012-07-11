@@ -17,7 +17,7 @@ class Module
         $mainSm = $e->getTarget('application')->getServiceManager();
 
         $adapterPluginManager = StorageFactory::getAdapterPluginManager();
-        $adapterPluginManager->setFactory('BjyCacheStorage\Adapter\Redis', function($sm) use ($mainSm) {
+        $adapterPluginManager->setFactory('redis', function($sm) use ($mainSm) {
             $adapter = new Adapter\Redis;
             $adapter->setPredis($mainSm->get('predis'));
             return $adapter;
