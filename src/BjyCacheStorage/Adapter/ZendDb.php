@@ -36,8 +36,10 @@ class ZendDb extends AbstractAdapter
         $result = count($result) ? $result->current() : false;
 
         if ($result) {
+            $success = true;
             return unserialize($result[$this->getOptions()->getValueField()]);
         } else {
+            $success = false;
             return false;
         }
     }
