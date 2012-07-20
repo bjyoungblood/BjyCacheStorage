@@ -37,12 +37,12 @@ class Module
         );
     }
 
-    public function getServiceConfiguration()
+    public function getServiceConfig()
     {
         return array(
             'factories' => array(
                 'predis' => function($sm) {
-                    $config = $sm->get('Configuration');
+                    $config = $sm->get('Config');
                     $predis = new Client($config['bjycachestorage']['redis']);
                     return $predis;
                 },
