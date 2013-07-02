@@ -34,6 +34,18 @@ class Redis extends AbstractAdapter implements FlushableInterface
         return false;
     }
 
+    protected function internalIncrementItem(& $normalizedKey, & $value)
+    {
+	$return = null;
+	if ($value == 1)
+            $return = $this->predis->incr($normalizedKey);
+	elseif (is_float($value))
+            $return = $this->predis->incrbyfloat($normalizedKey,$value);
+	elseif (is_int($value))
+            $return = $this->predis->incrby($normalizedKey,$value);
+        return $return;
+    }
+
     protected function internalRemoveItem(& $normalizedKey)
     {
         return $this->predis->del($normalizedKey);
